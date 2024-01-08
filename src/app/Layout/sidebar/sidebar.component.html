@@ -1,0 +1,16 @@
+<aside id="sidebar" class="sidebar">
+    <ul class="sidebar-nav mb-5" id="sidebar-nav">
+       <li class="nav-item" *ngFor="let menu of menuSubmenuList">
+         <a class="nav-link collapsed" [attr.data-bs-target]="'#'+menu.menU_NAME +'-nav'" data-bs-toggle="collapse" href="#"> <i [className]="menu.menU_ICON"></i><span>{{menu.menU_NAME}}</span><i class="bi bi-chevron-down ms-auto"></i> </a>
+         <ul [attr.id]="menu.menU_NAME + '-nav'"  class="nav-content collapse " data-bs-parent="#sidebar-nav">
+            <li *ngFor="let submenu of menu.managE_SUBMENU">
+                <a routerLinkActive="active" [routerLink]="submenu.SUBMENU_LINK"> 
+                  <i class="bi bi-circle"></i>
+                  <span>{{submenu.SUBMENU_NAME}}</span>
+                </a>
+            </li>
+         </ul>
+       </li>
+       <!-- <li class="nav-heading mt-5 btn btn-danger">Log Out &nbsp; &nbsp;  <i class="ri-shut-down-line"></i></li> -->
+    </ul>
+ </aside>
