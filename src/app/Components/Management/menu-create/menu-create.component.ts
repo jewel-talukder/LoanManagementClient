@@ -12,21 +12,43 @@ import { DataService } from 'src/app/Service/data.service';
 export class MenuCreateComponent implements OnInit{
   menuFormData:FormGroup=new FormGroup({});
   savingMode:string="Create";
-  Id:any;
+  existMenuList:Array<any>=[];
+  Id:any=0;
+  status=[{id:0,name:"Active"},{id:1,name:"InActive"}];
   constructor(private clientService:DataService,private toastr:ToastrService,private fb:FormBuilder){}
   ngOnInit(): void {
+
    this.ResetValue();
     if(this.Id !=0){
       this.savingMode="Update";
       this.GetDataById()
     }
+    this.getMenuList();
   }
   ResetValue(){
-    
+    this.menuFormData=this.fb.group({
+      MenuId:[0],
+      MenuName:[''],
+      ParentMenu:[0],
+      MenuUrl:[''],
+      MenuIcon:[''],
+      MenuSerial:[0],
+      MenuStatus:[0],
+      CreatedAt:[new Date()],
+      UpdatedAt:[new Date()],
+      CreatedBy:[0],
+      UpdatedBy:[0]
+
+    })
+  }
+  getMenuList(){
+    this.clientService.GetData("Menu/GetMenu").subscribe((data:any)=>{
+      this.existMenuList=data;
+    })
   }
   OnSubmit(){
-    if(this.menuFormData.value.MENU_ID ==0){
-      this.clientService.PostData("Menu/NewMenu",this.menuFormData).subscribe((data:any)=>{
+    if(this.menuFormData.value.MenuId ==0){
+      this.clientService.PostData("Menu/NewMenu",this.menuFormData.value).subscribe((data:any)=>{
         if(data)
         this.ResetValue
       },
@@ -36,7 +58,7 @@ export class MenuCreateComponent implements OnInit{
       }
       )
     }else{
-      this.clientService.PutData("Menu/EditMenu",this.menuFormData.value.MENU_ID,this.menuFormData.value).subscribe((data:any)=>{
+      this.clientService.PutData("Menu/EditMenu",this.menuFormData.value.MenuId,this.menuFormData.value).subscribe((data:any)=>{
         if(data)
         this.ResetValue();
       },(error:HttpErrorResponse)=>{

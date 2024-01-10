@@ -1,64 +1,106 @@
-<div class="col-12 p-0 m-0 float-left" style="width: 645px !important;">
-    <form novalidate #form = "ngForm">
-  
-      <div class="formbody">
-        
-  
-        <div class="col-lg-12 float-left p-0 mb-2">
-          <div class="col-md-3 float-left">
-            <label for="RMTNAME" class="control-label">Menu Title</label>
-          </div>
-          <div class="col-lg-9 col-md-10 float-left">
-            <dx-text-box [showClearButton]="false"
-                         name="MENU_NAME"
-                         placeholder="Enter Menu Name">
-            </dx-text-box>
-          </div>
-        </div>
-        <div class="col-lg-12 float-left p-0 mb-2">
-            <div class="col-md-3 float-left">
-              <label for="RMTNAME" class="control-label">Menu Icon</label>
+<main id="main" class="main" >
+  <section class="section">
+    <div class="row p-0 m-0" >
+      <div class="col-12 p-0 m-0 float-left">
+        <form [formGroup]="menuFormData" novalidate #form = "ngForm">
+      
+          <div class="formbody">
+            
+      
+            <div class="col-lg-12 float-left p-0 mb-2">
+              <div class="col-md-3 float-left">
+                <label for="RMTNAME" class="control-label">Menu Title</label>
+              </div>
+              <div class="col-lg-9 col-md-10 float-left">
+                <dx-text-box [showClearButton]="false"
+                             name="MENU_NAME"
+                             formControlName="MenuName"
+                             placeholder="Enter Menu Name">
+                </dx-text-box>
+              </div>
             </div>
-            <div class="col-lg-9 col-md-10 float-left">
-              <dx-text-box [showClearButton]="false"
-                           name="MENU_ICON"
-                           placeholder="Enter Menu Icon">
-              </dx-text-box>
+            <div class="col-lg-12 float-left p-0 mb-2">
+                <div class="col-md-3 float-left">
+                  <label for="RMTNAME" class="control-label">Menu Icon</label>
+                </div>
+                <div class="col-lg-9 col-md-10 float-left">
+                  <dx-text-box [showClearButton]="false"
+                               name="MENU_ICON"
+                               formControlName="MenuIcon"
+                               placeholder="Enter Menu Icon">
+                  </dx-text-box>
+                </div>
+              </div>
+              <div class="col-lg-12 float-left p-0 mb-2">
+                <div class="col-md-3 float-left">
+                  <label for="RMTNAME" class="control-label">Menu Status</label>
+                </div>
+                <div class="col-lg-9 col-md-10 float-left">
+                  <dx-select-box [showClearButton]="false"
+                              [dataSource]="status"
+                              displayExpr="name"
+                              valueExpr="id"
+                               name="MENU_PRIORITY"
+                               formControlName="MenuStatus"
+                               placeholder="Enter Menu Icon">
+                  </dx-select-box>
+                </div>
+              </div>
+              <div class="col-lg-12 float-left p-0 mb-2">
+                <div class="col-md-3 float-left">
+                  <label for="RMTNAME" class="control-label">Menu Url</label>
+                </div>
+                <div class="col-lg-9 col-md-10 float-left">
+                  <dx-text-box [showClearButton]="false"
+                               name="MENU_PRIORITY"
+                               formControlName="MenuUrl"
+                               placeholder="Enter Menu Url">
+                  </dx-text-box>
+                </div>
+              </div>
+              <div class="col-lg-12 float-left p-0 mb-2">
+                <div class="col-md-3 float-left">
+                  <label for="RMTNAME" class="control-label">Parent Menu</label>
+                </div>
+                <div class="col-lg-9 col-md-10 float-left">
+                  <dx-select-box [showClearButton]="false"
+                              [dataSource]="existMenuList"
+                              displayExpr="MENU_NAME"
+                              valueExpr="MENU_ID"
+                               name="MENU_PRIORITY"
+                               placeholder="Enter Parent Menu">
+                  </dx-select-box>
+                </div>
+              </div>
+          </div>
+      
+          <div class="btn-area">
+            <div class="col-lg-12 float-left p-0 ">
+              <dx-button class="submitbtn"
+                         (onClick)="OnSubmit()">
+                <span class="material-icons p-0">
+                  task_alt
+                </span> {{savingMode}}
+              </dx-button>
+      
+              <dx-button class="closebtn"
+                         (onClick)="OnClose()">
+                <span class="material-icons p-0">
+                  home
+                </span> Close
+              </dx-button>
             </div>
           </div>
-          <div class="col-lg-12 float-left p-0 mb-2">
-            <div class="col-md-3 float-left">
-              <label for="RMTNAME" class="control-label">Menu Priority</label>
-            </div>
-            <div class="col-lg-9 col-md-10 float-left">
-              <dx-text-box [showClearButton]="false"
-                           name="MENU_PRIORITY"
-                           placeholder="Enter Menu Icon">
-              </dx-text-box>
-            </div>
-          </div>
+        </form>
+      
       </div>
-  
-      <div class="btn-area">
-        <div class="col-lg-12 float-left p-0 ">
-          <dx-button class="submitbtn"
-                     (onClick)="OnSubmit()">
-            <span class="material-icons p-0">
-              task_alt
-            </span> {{savingMode}}
-          </dx-button>
-  
-          <dx-button class="closebtn"
-                     (onClick)="OnClose()">
-            <span class="material-icons p-0">
-              home
-            </span> Close
-          </dx-button>
-        </div>
-      </div>
-    </form>
-  
-  </div>
+    </div>
+    
+  </section>
+</main>
+
+
+
   
   
   

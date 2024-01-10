@@ -1,5 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { DataService } from 'src/app/Service/data.service';
 
@@ -13,10 +14,8 @@ export class MenuComponent implements OnInit{
   showPageSizeSelector = true;
   showNavButtons = true;
   showInfo = true;
-  isDetailPopupVisible:boolean=false;
-  popupTitle:string="";
   MenuList:Array<any>=[];
-  constructor(public clientService:DataService,private toastr:ToastrService){
+  constructor(public clientService:DataService,private toastr:ToastrService,private router:Router){
     this.Edit=this.Edit.bind(this);
     this.Details=this.Details.bind(this);
   }
@@ -37,18 +36,13 @@ export class MenuComponent implements OnInit{
     )
   }
   addNew(){
-    this.isDetailPopupVisible=false;
-    this.popupTitle="Create Menu";
+    this.router.navigate(['/menu-create']);
   }
   Edit(evt:any){
-    this.popupTitle="Edit Menu";
-  this.isDetailPopupVisible=false;
 
   }
  
  
   Details(evt:any){
-    this.popupTitle="Details Menu";
-    this.isDetailPopupVisible=true;
   }
 }
