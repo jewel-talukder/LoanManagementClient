@@ -14,6 +14,7 @@ export class CompanySetupComponent implements OnInit{
   showInfo = true;
   constructor(private dataService:DataService, private router:Router){}
   ngOnInit(): void {
+    this.InitalValue();
   }
   InitalValue(){
     this.dataService.GetData("CompanySetUp/GetCompanySetUp").subscribe((obj:any)=>{

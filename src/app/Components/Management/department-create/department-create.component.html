@@ -1,1 +1,68 @@
-<p>department-create works!</p>
+<main id="main" class="main" >
+    <section class="section">
+      <div class="row p-0 m-0" >
+        <div class="col-12 p-0 m-0 float-left">
+          <form [formGroup]="DepartmentFormData" novalidate #form = "ngForm">
+        
+            <div class="formbody">
+              
+        
+              <div class="col-lg-12 float-left p-0 mb-2">
+                <div class="col-md-3 float-left">
+                  <label for="CompanyName" class="control-label">Department Name</label>
+                </div>
+                <div class="col-lg-9 col-md-10 float-left">
+                  <dx-text-box [showClearButton]="false"
+                               name="DepartmentName"
+                               formControlName="DepartmentName"
+                               placeholder="Enter Department Name">
+                  </dx-text-box>
+                </div>
+              </div>
+              <div class="col-lg-12 float-left p-0 mb-2">
+                  <div class="col-md-3 float-left">
+                    <label for="DepartmentDescription" class="control-label">Description</label>
+                  </div>
+                  <div class="col-lg-9 col-md-10 float-left">
+                    <dx-text-box [showClearButton]="false"
+                                 name="DepartmentDescription"
+                                 formControlName="DepartmentDescription"
+                                 placeholder="Enter Description">
+                    </dx-text-box>
+                  </div>
+                </div>
+             
+                
+              
+            </div>
+        
+            <div class="btn-area">
+              <div class="col-lg-12 float-left p-0 ">
+                <dx-button class="submitbtn"
+                           (onClick)="OnSubmit()">
+                  <span class="material-icons p-0">
+                    task_alt
+                  </span> {{savingMode}}
+                </dx-button>
+        
+                <dx-button class="closebtn"
+                           (onClick)="OnClose()">
+                  <span class="material-icons p-0">
+                    home
+                  </span> Close
+                </dx-button>
+              </div>
+            </div>
+          </form>
+        
+        </div>
+      </div>
+      
+    </section>
+  </main>
+  
+  
+  
+    
+    
+    

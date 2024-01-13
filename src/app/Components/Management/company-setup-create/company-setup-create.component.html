@@ -1,1 +1,129 @@
-<p>company-setup-create works!</p>
+<main id="main" class="main" >
+    <section class="section">
+      <div class="row p-0 m-0" >
+        <div class="col-12 p-0 m-0 float-left">
+          <form [formGroup]="CompanyFormData" novalidate #form = "ngForm">
+        
+            <div class="formbody">
+              
+        
+              <div class="col-lg-12 float-left p-0 mb-2">
+                <div class="col-md-3 float-left">
+                  <label for="CompanyName" class="control-label">Branch Name</label>
+                </div>
+                <div class="col-lg-9 col-md-10 float-left">
+                  <dx-text-box [showClearButton]="false"
+                               name="CompanyName"
+                               formControlName="CompanyName"
+                               placeholder="Enter Branch">
+                  </dx-text-box>
+                </div>
+              </div>
+              <div class="col-lg-12 float-left p-0 mb-2">
+                  <div class="col-md-3 float-left">
+                    <label for="CompanyAddress" class="control-label">Address</label>
+                  </div>
+                  <div class="col-lg-9 col-md-10 float-left">
+                    <dx-text-box [showClearButton]="false"
+                                 name="CompanyAddress"
+                                 formControlName="CompanyAddress"
+                                 placeholder="Enter Company Address">
+                    </dx-text-box>
+                  </div>
+                </div>
+             
+                <div class="col-lg-12 float-left p-0 mb-2">
+                  <div class="col-md-3 float-left">
+                    <label for="CompanyPhone1" class="control-label">Phone 1</label>
+                  </div>
+                  <div class="col-lg-9 col-md-10 float-left">
+                    <dx-text-box [showClearButton]="false"
+                                 name="CompanyPhone1"
+                                 formControlName="CompanyPhone1"
+                                 placeholder="Enter Company Phone1">
+                    </dx-text-box>
+                  </div>
+                </div>
+                <div class="col-lg-12 float-left p-0 mb-2">
+                    <div class="col-md-3 float-left">
+                      <label for="CompanyPhone2" class="control-label">Phone 2</label>
+                    </div>
+                    <div class="col-lg-9 col-md-10 float-left">
+                      <dx-text-box [showClearButton]="false"
+                                   name="CompanyPhone2"
+                                   formControlName="CompanyPhone2"
+                                   placeholder="Enter Company Phone 2">
+                      </dx-text-box>
+                    </div>
+                  </div>
+                  <div class="col-lg-12 float-left p-0 mb-2">
+                    <div class="col-md-3 float-left">
+                      <label for="RMTNAME" class="control-label">Email</label>
+                    </div>
+                    <div class="col-lg-9 col-md-10 float-left">
+                      <dx-text-box [showClearButton]="false"
+                                   name="MENU_PRIORITY"
+                                   formControlName="CompanyEmail"
+                                   placeholder="Enter Menu Url">
+                      </dx-text-box>
+                    </div>
+                  </div>
+                  <div class="col-lg-12 float-left p-0 mb-2">
+                    <div class="col-md-3 float-left">
+                      <label for="RMTNAME" class="control-label">Facebook Link</label>
+                    </div>
+                    <div class="col-lg-9 col-md-10 float-left">
+                      <dx-text-box [showClearButton]="false"
+                                   name="MENU_PRIORITY"
+                                   formControlName="FacebookUrl"
+                                   placeholder="Enter Facebook Url">
+                      </dx-text-box>
+                    </div>
+                  </div>
+                <div class="col-lg-12 float-left p-0 mb-2">
+                  <div class="col-md-3 float-left">
+                    <label for="RMTNAME" class="control-label">Parent Branch</label>
+                  </div>
+                  <div class="col-lg-9 col-md-10 float-left">
+                    <dx-select-box [showClearButton]="false"
+                                [dataSource]="existCompanyList"
+                                displayExpr="companyName"
+                                valueExpr="companyId"
+                                formControlName="ParentCompany"
+                                 name="MENU_PRIORITY"
+                                 placeholder="Enter Parent Menu">
+                    </dx-select-box>
+                  </div>
+                </div>
+            </div>
+        
+            <div class="btn-area">
+              <div class="col-lg-12 float-left p-0 ">
+                <dx-button class="submitbtn"
+                           (onClick)="OnSubmit()">
+                  <span class="material-icons p-0">
+                    task_alt
+                  </span> {{savingMode}}
+                </dx-button>
+        
+                <dx-button class="closebtn"
+                           (onClick)="OnClose()">
+                  <span class="material-icons p-0">
+                    home
+                  </span> Close
+                </dx-button>
+              </div>
+            </div>
+          </form>
+        
+        </div>
+      </div>
+      
+    </section>
+  </main>
+  
+  
+  
+    
+    
+    
