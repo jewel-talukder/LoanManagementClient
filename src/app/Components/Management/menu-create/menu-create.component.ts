@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
@@ -15,7 +16,7 @@ export class MenuCreateComponent implements OnInit{
   existMenuList:Array<any>=[];
   Id:any=0;
   status=[{id:0,name:"Active"},{id:1,name:"InActive"}];
-  constructor(private clientService:DataService,private toastr:ToastrService,private fb:FormBuilder){}
+  constructor(private clientService:DataService,private toastr:ToastrService,private fb:FormBuilder,private location:Location){}
   ngOnInit(): void {
 
    this.ResetValue();
@@ -42,15 +43,24 @@ export class MenuCreateComponent implements OnInit{
     })
   }
   getMenuList(){
-    this.clientService.GetData("Menu/GetMenu").subscribe((data:any)=>{
-      this.existMenuList=data;
-    })
+    this.clientService.GetData("Menu/GetMenu").subscribe((obj:any)=>{
+      this.existMenuList=obj;
+      debugger;
+    },
+    (error: HttpErrorResponse) => {
+      if(error)
+      this.toastr.error(`Failed to Retrive data.`, ' Failure!!!');
+    }
+   
+    )
   }
   OnSubmit(){
     if(this.menuFormData.value.MenuId ==0){
       this.clientService.PostData("Menu/NewMenu",this.menuFormData.value).subscribe((data:any)=>{
         if(data)
         this.ResetValue
+        this.toastr.success(`Data Saved Successfully.`, ' Success!!!');
+        this.OnClose();
       },
       (error: HttpErrorResponse) => {
         if(error)
@@ -70,8 +80,7 @@ export class MenuCreateComponent implements OnInit{
 
   }
   OnClose(){
-    // this.clientService.isShowPopUpVisiable=false;
-    // this.clientService.Id=0;
+    this.location.back();
   }
   GetDataById(){
     this.ResetValue();

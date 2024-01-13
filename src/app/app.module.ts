@@ -45,6 +45,12 @@ import { SidebarComponent } from './Layout/sidebar/sidebar.component';
 import { MenuComponent } from './Components/Management/menu/menu.component';
 import { MenuCreateComponent } from './Components/Management/menu-create/menu-create.component';
 import { MenuDetailsComponent } from './Components/Management/menu-details/menu-details.component';
+import { DepartmentComponent } from './Components/Management/department/department.component';
+import { DepartmentCreateComponent } from './Components/Management/department-create/department-create.component';
+import { DepartmentDetailsComponent } from './Components/Management/department-details/department-details.component';
+import { UserComponent } from './Components/Management/user/user.component';
+import { UserCreateComponent } from './Components/Management/user-create/user-create.component';
+import { UserDetailsComponent } from './Components/Management/user-details/user-details.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +63,13 @@ import { MenuDetailsComponent } from './Components/Management/menu-details/menu-
     SidebarComponent,
     MenuComponent,
     MenuCreateComponent,
-    MenuDetailsComponent
+    MenuDetailsComponent,
+    DepartmentComponent,
+    DepartmentCreateComponent,
+    DepartmentDetailsComponent,
+    UserComponent,
+    UserCreateComponent,
+    UserDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -95,7 +107,7 @@ import { MenuDetailsComponent } from './Components/Management/menu-details/menu-
     ToastrModule.forRoot(
       {
         timeOut: 5000,
-      positionClass: 'toast-bottom-left',
+      positionClass: 'toast-top-right',
       preventDuplicates: false
       }
     ),

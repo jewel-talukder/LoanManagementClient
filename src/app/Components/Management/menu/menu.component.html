@@ -29,7 +29,7 @@
                           id="gridContainer"
                           [dataSource]="MenuList"
                           [showBorders]="true"
-                          [keyExpr]="'MENU_ID'"
+                          [keyExpr]="'menuId'"
                           [remoteOperations]="false"
                           [allowColumnReordering]="true"
                           [hoverStateEnabled]="true"
@@ -42,21 +42,28 @@
                             placeholder="Search..."
                           ></dxo-search-panel>
                           <dxi-column
-                            dataField="MENU_NAME"
+                            dataField="menuName"
                             caption="Menu Name"
                           >
                           </dxi-column>
                           <th></th>
                           <dxi-column
-                          dataField="MENU_ICON"
+                          dataField="menuIcon"
                           caption="Menu Icon"
                           [width]="250"
                         >
                         </dxi-column>
+                        <th></th>
                         <dxi-column
-                        dataField="MENU_PRIORITY"
-                        caption="Menu Priority"
-                        [width]="100"
+                        dataField="menuUrl"
+                        caption="Menu Link"
+                        [width]="250"
+                      >
+                      </dxi-column>
+                        <dxi-column
+                        dataField="parentMenuName"
+                        caption="Parent Menu Name"
+                        [width]="250"
                         >
                         </dxi-column>
                 

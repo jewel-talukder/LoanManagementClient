@@ -24,7 +24,7 @@ export class MenuComponent implements OnInit{
   }
   InitalValue(){
     this.isLoadPanelVisible=true;
-    this.clientService.GetData("Menu/GetMenuList").subscribe((obj:any)=>{
+    this.clientService.GetData("Menu/GetMenu").subscribe((obj:any)=>{
       this.MenuList=obj;
       this.isLoadPanelVisible=false;
     },

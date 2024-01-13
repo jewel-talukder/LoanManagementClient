@@ -65,8 +65,9 @@
                 <div class="col-lg-9 col-md-10 float-left">
                   <dx-select-box [showClearButton]="false"
                               [dataSource]="existMenuList"
-                              displayExpr="MENU_NAME"
-                              valueExpr="MENU_ID"
+                              displayExpr="menuName"
+                              valueExpr="menuId"
+                              formControlName="ParentMenu"
                                name="MENU_PRIORITY"
                                placeholder="Enter Parent Menu">
                   </dx-select-box>
