@@ -13,6 +13,11 @@ import { DepartmentDetailsComponent } from './Components/Management/department-d
 import { UserComponent } from './Components/Management/user/user.component';
 import { UserDetailsComponent } from './Components/Management/user-details/user-details.component';
 import { UserCreateComponent } from './Components/Management/user-create/user-create.component';
+import { DesignationComponent } from './Components/Management/designation/designation.component';
+import { DesignationCreateComponent } from './Components/Management/designation-create/designation-create.component';
+import { DesignationDetailsComponent } from './Components/Management/designation-details/designation-details.component';
+import { CompanySetupCreateComponent } from './Components/Management/company-setup-create/company-setup-create.component';
+import { CompanySetupDetailsComponent } from './Components/Management/company-setup-details/company-setup-details.component';
 
 const routes: Routes = [
   {
@@ -27,6 +32,14 @@ const routes: Routes = [
       {
         path:'company-setup',
         component:CompanySetupComponent
+      },
+      {
+        path:'company-create',
+        component:CompanySetupCreateComponent
+      },
+      {
+        path:'company-details',
+        component:CompanySetupDetailsComponent
       },
       {
         path:'menu',
@@ -57,6 +70,17 @@ const routes: Routes = [
       },{
         path:'user-details',
         component:UserDetailsComponent
+      },
+      {
+        path:'designation',
+        component:DesignationComponent
+      },
+      {
+        path:'designation-create',
+        component:DesignationCreateComponent
+      },{
+        path:'designation-details',
+        component:DesignationDetailsComponent
       }
 
     ]

@@ -51,6 +51,11 @@ import { DepartmentDetailsComponent } from './Components/Management/department-d
 import { UserComponent } from './Components/Management/user/user.component';
 import { UserCreateComponent } from './Components/Management/user-create/user-create.component';
 import { UserDetailsComponent } from './Components/Management/user-details/user-details.component';
+import { DesignationComponent } from './Components/Management/designation/designation.component';
+import { DesignationCreateComponent } from './Components/Management/designation-create/designation-create.component';
+import { DesignationDetailsComponent } from './Components/Management/designation-details/designation-details.component';
+import { CompanySetupCreateComponent } from './Components/Management/company-setup-create/company-setup-create.component';
+import { CompanySetupDetailsComponent } from './Components/Management/company-setup-details/company-setup-details.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +74,12 @@ import { UserDetailsComponent } from './Components/Management/user-details/user-
     DepartmentDetailsComponent,
     UserComponent,
     UserCreateComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    DesignationComponent,
+    DesignationCreateComponent,
+    DesignationDetailsComponent,
+    CompanySetupCreateComponent,
+    CompanySetupDetailsComponent
   ],
   imports: [
     BrowserModule,
