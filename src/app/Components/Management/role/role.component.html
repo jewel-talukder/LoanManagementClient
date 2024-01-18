@@ -10,7 +10,7 @@
                           <div class="pagetitle">
                              <h1 >
                               <i class="ri-ball-pen-line"></i>
-                              Designation List</h1>
+                              Role List</h1>
                            
                           </div>
                         </div>
@@ -27,9 +27,9 @@
 
                     <dx-data-grid
                           id="gridContainer"
-                          [dataSource]="DesignationList"
+                          [dataSource]="RoleList"
                           [showBorders]="true"
-                          [keyExpr]="'designationId'"
+                          [keyExpr]="'roleId'"
                           [remoteOperations]="false"
                           [allowColumnReordering]="true"
                           [hoverStateEnabled]="true"
@@ -42,28 +42,11 @@
                             placeholder="Search..."
                           ></dxo-search-panel>
                           <dxi-column
-                            dataField="designationName"
-                            caption="Designation Name"
+                            dataField="roleName"
+                            caption="Role Name"
                           >
                           </dxi-column>
-                          <th></th>
-                          <dxi-column
-                          dataField="departmentName"
-                          caption="Department"
-                          [width]="250"
-                        >
-                        </dxi-column>
-                          <th></th>
-                          <dxi-column
-                          dataField="designationDescription"
-                          caption="Description"
-                          [width]="250"
-                        >
-                        </dxi-column>
-                  
-                
-                
-                
+                          
                           <dxi-column type="buttons" caption="Action" >
                             <dxi-button text="Details"
                                         hint="Explore the details of this record by clicking here..."

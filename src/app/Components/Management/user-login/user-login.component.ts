@@ -82,6 +82,6 @@ export class UserLoginComponent implements OnInit{
       })
       
       this.isLoadPanelVisible=false;
-    }, 4000);
+    }, 2000);
       }
 }

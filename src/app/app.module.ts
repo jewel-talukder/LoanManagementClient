@@ -56,6 +56,9 @@ import { DesignationCreateComponent } from './Components/Management/designation-
 import { DesignationDetailsComponent } from './Components/Management/designation-details/designation-details.component';
 import { CompanySetupCreateComponent } from './Components/Management/company-setup-create/company-setup-create.component';
 import { CompanySetupDetailsComponent } from './Components/Management/company-setup-details/company-setup-details.component';
+import { RoleComponent } from './Components/Management/role/role.component';
+import { RoleCreateComponent } from './Components/Management/role-create/role-create.component';
+import { RoleDetailsComponent } from './Components/Management/role-details/role-details.component';
 
 @NgModule({
   declarations: [
@@ -79,7 +82,10 @@ import { CompanySetupDetailsComponent } from './Components/Management/company-se
     DesignationCreateComponent,
     DesignationDetailsComponent,
     CompanySetupCreateComponent,
-    CompanySetupDetailsComponent
+    CompanySetupDetailsComponent,
+    RoleComponent,
+    RoleCreateComponent,
+    RoleDetailsComponent
   ],
   imports: [
     BrowserModule,

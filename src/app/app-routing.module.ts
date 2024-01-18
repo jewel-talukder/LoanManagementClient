@@ -18,6 +18,9 @@ import { DesignationCreateComponent } from './Components/Management/designation-
 import { DesignationDetailsComponent } from './Components/Management/designation-details/designation-details.component';
 import { CompanySetupCreateComponent } from './Components/Management/company-setup-create/company-setup-create.component';
 import { CompanySetupDetailsComponent } from './Components/Management/company-setup-details/company-setup-details.component';
+import { RoleComponent } from './Components/Management/role/role.component';
+import { RoleCreateComponent } from './Components/Management/role-create/role-create.component';
+import { RoleDetailsComponent } from './Components/Management/role-details/role-details.component';
 
 const routes: Routes = [
   {
@@ -81,6 +84,18 @@ const routes: Routes = [
       },{
         path:'designation-details',
         component:DesignationDetailsComponent
+      },
+      {
+        path:'role',
+        component:RoleComponent
+      },
+      {
+        path:'role-create',
+        component:RoleCreateComponent
+      },
+      {
+        path:'role-details',
+        component:RoleDetailsComponent
       }
 
     ]

@@ -1,1 +1,83 @@
-<p>designation-create works!</p>
+<main id="main" class="main" >
+    <section class="section">
+      <div class="row p-0 m-0" >
+        <div class="col-12 p-0 m-0 float-left">
+          <form [formGroup]="DesignationFormData" novalidate #form = "ngForm">
+        
+            <div class="formbody">
+              
+        
+              <div class="col-lg-12 float-left p-0 mb-2">
+                <div class="col-md-3 float-left">
+                  <label for="DesignationName" class="control-label">Designation Name</label>
+                </div>
+                <div class="col-lg-9 col-md-10 float-left">
+                  <dx-text-box [showClearButton]="false"
+                               name="DesignationName"
+                               formControlName="DesignationName"
+                               placeholder="Enter Designation Name">
+                  </dx-text-box>
+                </div>
+              </div>
+              <div class="col-lg-12 float-left p-0 mb-2">
+                <div class="col-md-3 float-left">
+                  <label for="DesignationName" class="control-label">Department Name</label>
+                </div>
+                <div class="col-lg-9 col-md-10 float-left">
+                  <dx-select-box [showClearButton]="false"
+                                [dataSource]="DepartmentList"
+                                displayExpr="departmentName"
+                                valueExpr="departmentId"
+                               name="DesignationName"
+                               formControlName="DepartmentId"
+                               placeholder="Enter Designation Name">
+                  </dx-select-box>
+                </div>
+              </div>
+              <div class="col-lg-12 float-left p-0 mb-2">
+                  <div class="col-md-3 float-left">
+                    <label for="DesignationDescription" class="control-label">Description</label>
+                  </div>
+                  <div class="col-lg-9 col-md-10 float-left">
+                    <dx-text-box [showClearButton]="false"
+                                 name="DesignationDescription"
+                                 formControlName="DesignationDescription"
+                                 placeholder="Enter Description">
+                    </dx-text-box>
+                  </div>
+                </div>
+             
+                
+              
+            </div>
+        
+            <div class="btn-area">
+              <div class="col-lg-12 float-left p-0 ">
+                <dx-button class="submitbtn"
+                           (onClick)="OnSubmit()">
+                  <span class="material-icons p-0">
+                    task_alt
+                  </span> {{savingMode}}
+                </dx-button>
+        
+                <dx-button class="closebtn"
+                           (onClick)="OnClose()">
+                  <span class="material-icons p-0">
+                    home
+                  </span> Close
+                </dx-button>
+              </div>
+            </div>
+          </form>
+        
+        </div>
+      </div>
+      
+    </section>
+  </main>
+  
+  
+  
+    
+    
+    
